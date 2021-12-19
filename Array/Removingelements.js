@@ -2,13 +2,12 @@
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 //AT THE END OF AN ARRAY.
-numbers.pop(); //The output will be from 1 to 8.
-
+//numbers.pop(); //The output will be from 1 to 8.
 
 //AT THE BEGINING OF AN ARRAY.
-for (let i = 0; i < numbers.length; i++) {
-    numbers[i] = numbers[i + 1];
-}
+// for (let i = 0; i < numbers.length; i++) {
+//     numbers[i] = numbers[i + 1];
+// }
 //The output will be from 2 to 8.
 
 /**
@@ -22,22 +21,22 @@ for (let i = 0; i < numbers.length; i++) {
  */
 
 Array.prototype.reIndex = function (myArray) {
-    const newArray = [];
-    for (let i = 0; i < myArray.length; i++) {
-        if (myArray[i] !== undefined) {
-            //console.log(myArray[i]);
-            newArray.push(myArray[i]);
-        }
+  const newArray = [];
+  for (let i = 0; i < myArray.length; i++) {
+    if (myArray[i] !== undefined) {
+      //console.log(myArray[i]);
+      newArray.push(myArray[i]);
     }
-    return newArray;
-}
+  }
+  return newArray;
+};
 
-// remove first position manually and reIndex 
+// remove first position manually and reIndex
 Array.prototype.removeFirstPosition = function () {
-    for (let i = 0; i < this.length; i++) {
-        this[i] = this[i + 1];
-    }
-    return this.reIndex(this);
+  for (let i = 0; i < this.length; i++) {
+    this[i] = this[i + 1];
+  }
+  return this.reIndex(this);
 };
 
 numbers = numbers.removeFirstPosition();
@@ -49,4 +48,5 @@ numbers = numbers.removeFirstPosition();
 
 //Using the shift method.
 
-numbers.shift(); //The output is 4 to 8.
+// numbers.shift(); //The output is 4 to 8.
+console.log(numbers);
