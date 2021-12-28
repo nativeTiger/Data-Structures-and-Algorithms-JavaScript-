@@ -20,18 +20,18 @@ class Stack {
     }
     this.count--;
     const result = this.item[this.count];
-    delete result;
+    //delete result;
     return result;
   }
   peek() {
-      if(this.isEmpty()) {
-          return undefined;
-      }
-      return this.item[this.count - 1]
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    return this.item[this.count - 1];
   }
   clear() {
-      this.count =  0;
-      this.item = {}
+    this.count = 0;
+    this.item = {};
   }
 }
 
