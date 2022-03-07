@@ -2,18 +2,20 @@
 
 /**
  * In the array version, we do not need to worry avout a toString method because the data
- * structure will use the one already provided by the aray, For this object version, 
+ * structure will use the one already provided by the aray, For this object version,
  *we will create toString method so we can print the content of the stack similar to an array:
  */
-toString(); {
-    if (this.isEmpty()) {
-        return '';
-    }
-    let objString = `${this.items[0]}`; // {1}
-    for (let i = 0; i < this.count; i++) {  //{2}
-        objString = `${objString},${this.items[i]} `; //{3}
-    }
-    return objString;
+toString();
+{
+  if (this.isEmpty()) {
+    return "";
+  }
+  let objString = `${this.items[0]}`; // {1}
+  for (let i = 0; i < this.count; i++) {
+    //{2}
+    objString = `${objString},${this.items[i]} `; //{3}
+  }
+  return objString;
 }
 
 /**
