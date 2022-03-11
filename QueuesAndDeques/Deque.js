@@ -117,8 +117,8 @@ class Deque {
     if (this.isEmpty()) {
       return undefined;
     }
-    const result = this.items[this.count];
-    delete this.items[this.count];
+    const result = this.items[this.count - 1];
+    delete this.items[this.count - 1];
     this.count--;
     return result;
   }
@@ -138,11 +138,37 @@ class Deque {
   }
 }
 
-const deque = new Deque();
+//const deque = new Deque();
 //deque.addFront(1); // { scenario 1}
 //deque.addFront(2); //{ scenario 3}
 //deque.removeFront();
 //deque.addFront(3); // { scenario 2}
 //deque.removeBack();
 //console.log(deque.peekFront());
-//console.log(deque);
+//console.log(deque
+
+function palindromeChecker(aString) {
+  if (
+    aString === undefined ||
+    aString === null ||
+    (aString !== null && aString.length === 0)
+  ) {
+    return false;
+  }
+  const deque = new Deque();
+  const lowerString = aString.toLocaleLowerCase().split(" ").join("");
+  let firstChar, lastChar;
+  let isEqual = true;
+  for (let i = 0; i < lowerString.length; i++) {
+    deque.addBack(lowerString.charAt(i));
+  }
+  while (deque.size() > 1 && isEqual) {
+    firstChar = deque.removeFront();
+    lastChar = deque.removeBack();
+    if (firstChar !== lastChar) {
+      isEqual = false;
+    }
+  }
+  return isEqual;
+}
+console.log(palindromeChecker("Step on no pets"));
