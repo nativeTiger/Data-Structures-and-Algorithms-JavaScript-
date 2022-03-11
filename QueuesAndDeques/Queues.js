@@ -76,14 +76,41 @@ class Queue {
   }
 }
 
-const queue = new Queue();
+//const queue = new Queue();
 
-for (let i = 1; i <= 5; i++) {
-  queue.enqueue(i);
-}
+// for (let i = 1; i <= 5; i++) {
+//   queue.enqueue(i);
+// }
 //console.log(queue.isEmpty());
 
 //console.log(queue.toString());
 //console.log(queue.size());
 //console.log(queue.dequeue());
 //console.log(queue);
+
+// Hot Potato Implementation
+const names = ["kiran", "palpali", "niranjan"];
+function hotPotato(names, num) {
+  const queue = new Queue();
+  const elimentedList = [];
+
+  for (let i = 0; i < names.length; i++) {
+    queue.enqueue(names[i]);
+  }
+  while (queue.size() > 1) {
+    for (let i = 0; i < num; i++) {
+      queue.enqueue(queue.dequeue());
+    }
+    elimentedList.push(queue.dequeue());
+  }
+  return {
+    elemented: elimentedList,
+    winner: queue.dequeue(),
+  };
+}
+
+const result = hotPotato(names, 7);
+result.elemented.forEach((name) =>
+  console.log(`${name} was eliminated from the Hot Potato game.`)
+);
+console.log(`and the winner is ${result.winner}`);
