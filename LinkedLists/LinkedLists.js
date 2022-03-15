@@ -39,6 +39,18 @@ class LinkedList {
                                  be internally evoked as equalsFn 
                                  */
   }
+  /**  PUSHING THE ELEMENT IN THE LINKED LIST
+   *   Firstly we create the node with the element we want to insert,
+   *   there will be the two condition for inserting
+   *   => if the linked list is emply and if not empty,
+   *    if empty, then, we simply insert the new node in the  position of head,
+   *    which is initially empty.
+   *    if not empty, then we store the head in the temporary variable current and
+   *    we itirate until the next position of the head, i.e store as current will be null,
+   *    means it is the last node, so, we simply store the node to that last position. then,
+   *    increment the count, which indicates the number of elements in the node.
+   *
+   */
   push(element) {
     const node = new Node(element);
     if (this.head == null) {
@@ -52,18 +64,6 @@ class LinkedList {
       current.next = node;
     }
     this.count++;
-    /**
-     *   Firstly we create the node with the element we want to insert,
-     *   there will be the two condition for inserting
-     *   => if the linked list is emply and if not empty,
-     *    if empty, then, we simply insert the new node in the  position of head,
-     *    which is initially empty.
-     *    if not empty, then we store the head in the temporary variable current and
-     *    we itirate until the next position of the head, i.e store as current will be null,
-     *    means it is the last node, so, we simply store the node to that last position. then,
-     *    increment the count, which indicates the number of elements in the node.
-     *
-     */
   }
 }
 
