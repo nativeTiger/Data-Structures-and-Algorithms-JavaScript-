@@ -25,8 +25,8 @@
 // Skeleton of our LinkedList class
 
 const { defaulEquals } = require("./utils/DefaultEquals");
-const { Node } = require("./models/LinkedListModels");
-
+const { push } = require("./Push");
+const { removeAt } = require("./RemoveAt");
 class LinkedList {
   constructor(equalsFn = defaulEquals) {
     this.count = 0; // stores the number of elements we have in the list.
@@ -39,32 +39,8 @@ class LinkedList {
                                  be internally evoked as equalsFn 
                                  */
   }
-  /**  PUSHING THE ELEMENT IN THE LINKED LIST
-   *   Firstly we create the node with the element we want to insert,
-   *   there will be the two condition for inserting
-   *   => if the linked list is emply and if not empty,
-   *    if empty, then, we simply insert the new node in the  position of head,
-   *    which is initially empty.
-   *    if not empty, then we store the head in the temporary variable current and
-   *    we itirate until the next position of the head, i.e store as current will be null,
-   *    means it is the last node, so, we simply store the node to that last position. then,
-   *    increment the count, which indicates the number of elements in the node.
-   *
-   */
-  push(element) {
-    const node = new Node(element);
-    if (this.head == null) {
-      this.head = node;
-    } else {
-      let current;
-      current = this.head;
-      while (current.next != null) {
-        current = current.next;
-      }
-      current.next = node;
-    }
-    this.count++;
-  }
+  push = push;
+  removeAt = removeAt;
 }
 
 // Methods of the LinkedList class
@@ -91,6 +67,16 @@ class LinkedList {
  */
 
 const linkedList = new LinkedList();
+
 linkedList.push(1);
 linkedList.push(2);
-console.log(linkedList);
+
+let node = linkedList.head;
+
+// ittirating the value of the linked list
+while (node != null) {
+  console.log(node.element);
+  node = node.next;
+}
+
+console.log(linkedList.removeAt(1));
