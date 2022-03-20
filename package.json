@@ -1,0 +1,24 @@
+{
+  "name": "data-structures-and-algorithms-javascript-",
+  "version": "1.0.0",
+  "description": "\"# Data-Structures-and-Algorithms-JavaScript-\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nativeTiger/Data-Structures-and-Algorithms-JavaScript-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nativeTiger/Data-Structures-and-Algorithms-JavaScript-/issues"
+  },
+  "homepage": "https://github.com/nativeTiger/Data-Structures-and-Algorithms-JavaScript-#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
