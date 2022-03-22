@@ -13,6 +13,7 @@
  *     and if we reached the specified index then we terminate the loop and assign the previous.next = current.next,
  *     so that current element will be removed
  */
+const { getElementAt } = require("./GetElementAt");
 
 function removeAt(index) {
   if (index >= 0 && index < this.count) {
@@ -33,4 +34,21 @@ function removeAt(index) {
   return undefined;
 }
 
-module.exports = { removeAt };
+// we can refactor our above code using our getElementAt() function
+function removeAtRefector(index) {
+  if (index >= 0 && index < this.count) {
+    let current = this.head;
+    if (index === 0) {
+      this.head = current.next;
+    } else {
+      const previous = this.getElementAt(index - 1);
+      current = previous.next;
+      previous.next = current.next;
+    }
+    this.count--;
+    return current.element;
+  }
+  return undefined;
+}
+
+module.exports = { removeAt, removeAtRefector };

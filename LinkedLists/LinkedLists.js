@@ -26,7 +26,7 @@
 
 const { defaulEquals } = require("./utils/DefaultEquals");
 const { push } = require("./Push");
-const { removeAt } = require("./RemoveAt");
+const { removeAt, removeAtRefector } = require("./RemoveAt");
 const { getElementAt } = require("./GetElementAt");
 class LinkedList {
   constructor(equalsFn = defaulEquals) {
@@ -42,6 +42,7 @@ class LinkedList {
   }
   push = push;
   removeAt = removeAt;
+  removeAtRefector = removeAtRefector;
   getElementAt = getElementAt;
 }
 
@@ -81,4 +82,5 @@ console.log("node at", linkedList.getElementAt(1));
 //   node = node.next;
 // }
 
-// console.log(linkedList.removeAt(1));
+console.log(linkedList.removeAtRefector(1));
+console.log("node at", linkedList.getElementAt(1));
