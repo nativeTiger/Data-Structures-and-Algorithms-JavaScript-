@@ -30,6 +30,8 @@ const { removeAt, removeAtRefector } = require("./RemoveAt");
 const { getElementAt } = require("./GetElementAt");
 const { insertElementAt } = require("./InsertElementAt");
 const { indexOf } = require("./IndexOf");
+const { remove } = require("./Remove");
+
 class LinkedList {
   constructor(equalsFn = defaulEquals) {
     this.count = 0; // stores the number of elements we have in the list.
@@ -48,6 +50,7 @@ class LinkedList {
   getElementAt = getElementAt;
   insertElementAt = insertElementAt;
   indexOf = indexOf;
+  remove = remove;
 }
 
 // Methods of the LinkedList class
@@ -88,3 +91,4 @@ console.log("node at", linkedList.getElementAt(1));
 //linkedList.insertElementAt(1, 8);
 //console.log(linkedList.removeAtRefector(1));
 console.log(linkedList.indexOf(1));
+console.log(linkedList.remove(2));
