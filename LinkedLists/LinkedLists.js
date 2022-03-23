@@ -51,6 +51,19 @@ class LinkedList {
   insertElementAt = insertElementAt;
   indexOf = indexOf;
   remove = remove;
+
+  // some of the common function
+  size() {
+    return this.count;
+  }
+
+  isEmpty() {
+    return this.size() === 0;
+  }
+
+  getHead() {
+    return this.head;
+  }
 }
 
 // Methods of the LinkedList class
