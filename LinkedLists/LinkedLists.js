@@ -31,6 +31,7 @@ const { getElementAt } = require("./GetElementAt");
 const { insertElementAt } = require("./InsertElementAt");
 const { indexOf } = require("./IndexOf");
 const { remove } = require("./Remove");
+const toString = require("./ToString");
 
 class LinkedList {
   constructor(equalsFn = defaulEquals) {
@@ -51,6 +52,7 @@ class LinkedList {
   insertElementAt = insertElementAt;
   indexOf = indexOf;
   remove = remove;
+  toString = toString;
 
   // some of the common function
   size() {
@@ -93,7 +95,8 @@ const linkedList = new LinkedList();
 
 linkedList.push(1);
 linkedList.push(2);
-console.log("node at", linkedList.getElementAt(1));
+linkedList.push(3);
+//console.log("node at", linkedList.getElementAt(1));
 // let node = linkedList.head;
 
 // // ittirating the value of the linked list
@@ -103,5 +106,6 @@ console.log("node at", linkedList.getElementAt(1));
 // }
 //linkedList.insertElementAt(1, 8);
 //console.log(linkedList.removeAtRefector(1));
-console.log(linkedList.indexOf(1));
-console.log(linkedList.remove(2));
+// console.log(linkedList.indexOf(1));
+// console.log(linkedList.remove(2));
+console.log(linkedList.toString());
