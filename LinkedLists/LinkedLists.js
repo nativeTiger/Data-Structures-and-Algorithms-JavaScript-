@@ -108,4 +108,6 @@ linkedList.push(3);
 //console.log(linkedList.removeAtRefector(1));
 // console.log(linkedList.indexOf(1));
 // console.log(linkedList.remove(2));
-console.log(linkedList.toString());
+//console.log(linkedList.toString());
+
+module.exports = LinkedList;
