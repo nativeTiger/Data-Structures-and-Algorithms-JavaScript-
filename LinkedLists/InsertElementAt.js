@@ -2,7 +2,7 @@ const { Node } = require("./models/LinkedListModels");
 const { getElementAt } = require("./GetElementAt");
 
 function insertElementAt(index, element) {
-  if (index >= 0 && index < this.count) {
+  if (index >= 0 && index <= this.count) {
     let node = new Node(element);
     if (index === 0) {
       current = this.head;
