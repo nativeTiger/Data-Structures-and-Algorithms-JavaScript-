@@ -21,7 +21,7 @@ class CircularLinkedList extends LinkedList {
     let current = this.head;
     if (index >= 0 && index <= this.count) {
       if (index === 0) {
-        if (this.head === null) {
+        if (this.head == null) {
           this.head = node;
           node.next = this.head;
         } else {
@@ -40,4 +40,30 @@ class CircularLinkedList extends LinkedList {
     }
     return false;
   }
+
+  deletion(index) {
+    let current = this.head;
+    if (index >= 0 && index < this.count) {
+      if (index === 0) {
+        if (this.size() === 1) {
+          this.head = undefined;
+        } else {
+          this.head = this.head.next;
+          current = this.getElementAt(this.size());
+          current.next = this.head;
+        }
+      } else {
+        let previous = this.getElementAt(index - 1);
+        current = previous.next;
+        previous.next = current.next;
+      }
+      this.count--;
+      return true;
+    }
+    return undefined;
+  }
 }
+
+const circularLinkedList = new CircularLinkedList();
+console.log(circularLinkedList.insertion(0, 2));
+console.log(circularLinkedList.deletion(0));
