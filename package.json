@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/nativeTiger/Data-Structures-and-Algorithms-JavaScript-#readme",
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.20"
   }
 }
