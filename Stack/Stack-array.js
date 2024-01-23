@@ -11,50 +11,56 @@
 
 //CREATING an ARRAY-BASED STACK CLASS
 class Stack {
-    constructor() {
-        this.items = [];
-    }
+  constructor() {
+    this.items = [];
+  }
 }
 /**
  * The following methods will be availabel in the Stack class.s
  * -> push(element(s)): This method adds a new element(or severl elements) to the top of the stack.
  * -> pop(): This method removes the top element from the stack. It also returns the removed element.
- * -> peek(): This method returns the top element from the stack. The stack is not modified( it does not remove
+ * -> peek(): This  . The stack is not modified( it does not remove
  *     the element, it only returns the element for information purposes).
- * -> isEmpty(): This method returns true if the stack doesnot contain any elements and false if the size of the 
+ * -> isEmpty(): This method returns true if the stack doesnot contain any elements and false if the size of the
  *     stack is bigger than 0
- * -> clear():	This method	removes	all	the	elements of	the	stack. 
+ * -> clear():	This method	removes	all	the	elements of	the	stack.
  * -> size():	This method	returns	the	number of elements that	the	stack contains. It is similar to the
  * 	            length	property of	an	array.
  */
 // we put ; in the function to avoid ts error in my editor
 // Pushing elements to the stack
-push(element); {
-    this.items.push(element);
+push(element);
+{
+  this.items.push(element);
 }
 // Popping elements from the stack
-pop(); {
-    return this.items.pop();
+pop();
+{
+  return this.items.pop();
 }
 //Peeking the element from the top of the stack
-peek(); {
-    return this.items[this.items.length - 1];
+peek();
+{
+  return this.items[this.items.length - 1];
 }
 
 // Verifying whether the stack is empty
-isEmpty(); {
-    return this.items.length === 0;
+isEmpty();
+{
+  return this.items.length === 0;
 }
 
-size(); {
-    return this.items.length;
+// Determine the size of array
+size();
+{
+  return this.items.length;
 }
 
 //Clearing the elements of the stack
-clear(); {
-    this.items = [];
+clear();
+{
+  this.items = [];
 }
-
 
 const stack = new Stack();
 console.log(stack.isEmpty()); // outputs true
@@ -79,4 +85,3 @@ stack.push(15);
 stack.pop();
 stack.pop();
 console.log(stack.size()); // outputs 2
-

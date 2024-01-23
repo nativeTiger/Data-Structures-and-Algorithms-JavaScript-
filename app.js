@@ -1,1 +1,1 @@
-console.log("hele");
+require("./LinkedLists/AdditionProblem");
